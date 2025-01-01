@@ -1,0 +1,26 @@
+ <section class="footer">
+     <div class="footer-box">
+         <h2>Your Travel Companion</h2>
+         <p>You can message us on our social media accounts.</p>
+         <div class="social">
+             <a href="https://www.facebook.com/profile.php?id=100080090091999"><i class='bx bxl-facebook'></i></a>
+             <a href="https://x.com/i/flow/login"><i class='bx bxl-twitter'></i></a>
+             <a href="https://www.instagram.com/accounts/login/"><i class='bx bxl-instagram'></i></a>
+             <a href="https://www.tiktok.com/foryou?lang=en"><i class='bx bxl-tiktok'></i></a>
+         </div>
+     </div>
+     {% for cont in content %}
+     <div class="footer-box">
+         <h3>{{cont.name}}</h3>
+         <li><a href="#">{{cont.content1}}</a></li>
+         <li><a href="#">{{cont.content2}}</a></li>
+         <li><a href="#">{{cont.content3}}</a></li>
+         <li><a href="#">{{cont.content4}}</a></li>
+     </div>
+     {%endfor%}
+ </section>
+
+ <div class="copyright">
+     <p>&#169; Your Travel Companion All Right Reserve.</p>
+ </div>
+
