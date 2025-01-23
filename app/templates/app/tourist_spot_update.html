@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update {{ object.name }}</title>
+    <link rel="stylesheet" href="{% static 'css/touristspotupdate.css' %}">
+</head>
+<body>
+    <h1>Update</h1>
+    <form action="{% url 'tourist_spot_update' pk=object.pk %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" >Save Changes</button>
+        <button><a href="/tourist-spots">Back</a></button>
+    </form>
+</body>
+</html>

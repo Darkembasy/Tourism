@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add/Edit Tourist Spot</title>
+     <link rel="stylesheet" href="{% static 'css/touristspotform.css' %}">
+</head>
+<body>
+    <h1>Add/Edit Tourist Spot</h1>
+    <form action="{% url 'tourist_spot_form' %}" method="post">
+        {% csrf_token %}
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" ><br><br>
+
+        <label for="text">Description:</label><br>
+        <textarea id="text" name="text" rows="4" cols="50" ></textarea><br><br>
+
+        <label for="location">Location:</label><br>
+        <input type="text" id="location" name="location" ><br><br>
+
+        <label for="type_of_Activity">Activity Type:</label><br>
+        <select id="type_of_Activity" name="type_of_Activity" >
+            {% for activity in activities %}
+                <option value="{{ activity.pk }}" {% if activity.pk == form.activity.value %} selected{% endif %}>
+                    {{ activity }}
+                </option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="rating">Rating (1-5):</label><br>
+        <input type="number" id="rating" name="rating" min="1" max="5" ><br><br>
+
+        <button type="submit">Save</button>
+        <button><a href="/tourist-spots">Back</a></button>
+    </form>
+</body>
+</html>

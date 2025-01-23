@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ object.name }}</title>
+     <link rel="stylesheet" href="{% static 'css/touristspotdetail.css' %}">
+</head>
+<body>
+    <h1>Name : {{ object.name }}</h1>
+    <p>Activity : {{ object.type_of_Activity }}</p>
+    <p>Review : {{ object.text }}</p>
+    <p>Location: {{ object.location }}</p>
+    <p>Date Created: {{ object.date_created }}</p>
+    <button><a href="/tourist-spots">Back</a></button>
+</body>
+</html>

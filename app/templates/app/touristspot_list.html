@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tourist Spot Reviews</title>
+    <link rel="stylesheet" href="{% static 'css/touristspotlist.css' %}">
+</head>
+<body>
+    <h1>Tourist Spot Review</h1>
+
+    <form>
+        <input type="text" name="search" placeholder="Search by name or location">
+        <select name="order_by">
+            <option value="">Sort by</option>
+            <option value="rating">Rating</option>
+            <option value="name">Name</option>
+            <option value="date_created">Date Created</option>
+        </select>
+        <button type="submit">Filter</button>
+    </form>
+
+    <p>Average Rating: {{ average_rating }}</p>
+
+    <ul>
+        {% for spot in tourist_spots %}
+            <li>
+                <a href="{% url 'tourist_spot_detail' pk=spot.pk %}">{{ spot.rating }}★</a>
+                <a href="{% url 'tourist_spot_detail' pk=spot.pk %}">{{ spot.name }}</a>
+                <a href="{% url 'tourist_spot_detail' pk=spot.pk %}">{{ spot.location }}</a>
+                <a href="{% url 'tourist_spot_detail' pk=spot.pk %}">{{ spot.date_created }}</a>
+                <a href="{% url 'tourist_spot_update' pk=spot.pk %}">Edit</a>
+                <a href="{% url 'tourist_spot_confirm_delete' pk=spot.pk %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'tourist_spot_form' %}">Add New Tourist Spot Review</a>
+    <a href="{% url 'index' %}">Back To Home</a>
+
+</body>
+</html>

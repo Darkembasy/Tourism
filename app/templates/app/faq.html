@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philippines Tourism FAQ</title>
+     <link rel="stylesheet" href="{% static 'css/faq.css' %}">
+</head>
+<body>
+
+    <h1>Philippines Tourism FAQ</h1>
+
+    <div class="faq-container">
+
+        <div class="faq-item">
+            <div class="faq-question">What are the visa requirements for visiting the Philippines?</div>
+            <div class="faq-answer">
+                Visa requirements vary depending on your nationality. Please check the official website of the Philippine Embassy or Consulate in your country for the latest information.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">What is the best time to visit the Philippines?</div>
+            <div class="faq-answer">
+                The best time to visit the Philippines depends on your interests. The dry season (November to April) is generally the most popular time to visit, while the rainy season (May to October) offers lower prices and fewer crowds.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">What are some popular tourist destinations in the Philippines?</div>
+            <div class="faq-answer">
+                Some popular tourist destinations in the Philippines include:
+                <ul>
+                    <li>Boracay</li>
+                    <li>El Nido</li>
+                    <li>Banaue Rice Terraces</li>
+                    <li>Intramuros (Manila)</li>
+                    <li>Cebu City</li>
+                    <li>Siargao</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">What is the local currency in the Philippines?</div>
+            <div class="faq-answer">
+                The local currency in the Philippines is the Philippine Peso (PHP).
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">What is the official language in the Philippines?</div>
+            <div class="faq-answer">
+                The official languages in the Philippines are Filipino and English.
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+
+</body>
+</html>

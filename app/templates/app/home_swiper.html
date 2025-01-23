@@ -1,0 +1,27 @@
+{% load static %}
+<section class="home swiper" id="home">
+    <div class="swiper-wrapper">
+          <div class="swiper-slide container">
+             <img src="{% static 'images/elnido.jpg' %}" alt="#">
+                  <div class="home-text">
+                      <h1>Explore the <br>Beautiful Places<br>in El Nido, Palawan</h1>
+                      <a href="/elnido_palawan" class="btn">Explore</a>
+                  </div>
+          </div>
+          <div class="swiper-slide container">
+              <img src="{% static 'images/ifugao.jpg' %}" alt="#">
+                  <div class="home-text">
+                          <h1>Explore the <br>Beautiful Places<br>in Ifugao</h1>
+                          <a href="/ifugao" class="btn">Explore</a>
+                  </div>
+          </div>
+         <div class="swiper-slide container">
+              <img src="{% static 'images/image6.jpg' %}" alt="#">
+                 <div class="home-text">
+                          <h1>Explore the <br>Beautiful Places<br>in Boracay</h1>
+                          <a href="/boracay" class="btn">Explore</a>
+                 </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+</section>

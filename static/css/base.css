@@ -1,0 +1,16 @@
+.container {
+    text-align: center;
+}
+
+.form-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
