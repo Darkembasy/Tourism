@@ -4,10 +4,15 @@
 
     <ul class="navbar">
          <li><a href="#" class="home-active">Home</a></li>
-         <li><a href="/tourist-spots">Reviews</a></li>
          <li><a href="#">About</a></li>
-{#         {% if user.is_authenticated %}#}
-{#         <li><a href="{% url 'login' %}">Log Out</a></li>#}
-{#         {% endif %}#}
+         {% if user.is_authenticated %}
+           <li><a href="/tourist-spots">Reviews</a></li>
+         <form method="post" action="{% url 'logout' %}">
+          {% csrf_token %}
+          <button type="submit" class="logout-btn">Log Out</button>
+         </form>
+            {% else %}
+             <a href="{% url 'login' %}">Login</a>
+         {% endif %}
     </ul>
 </header>
